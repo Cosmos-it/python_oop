@@ -1,27 +1,5 @@
-'''
-Creator: Taban Cosmos
-Date: 03/31/2017
-Purpose: For learning
-Anyone can grab the code and modify the code
-Bank and Customer Python object oriented example
-'''
-
 #...........................................................
-
-class Customer():
-    ''' Customer class '''
-
-    def __init__(self, age=0, full_name="", occupation="", accounts=""):
-        self.age = age
-        self.full_name = full_name
-        self.occupation = occupation
-        self.accounts = accounts
-
-    def customer_info(self):
-        print("Name: " + self.full_name + "\nOccupation: " + self.occupation)
-        print("\nAge: " + str(self.age) + "\nAccounts: " + self.accounts)
-
-#...........................................................
+# Bank class
 
 class Bank():
     ''' Bank class '''
@@ -85,30 +63,3 @@ class Bank():
         if account_type == 'checking':
             result = self.checking + deposite
             self.checking = result
-
-
-new_customer = Customer(
-29, "Mark kamanu", "Software Engineer", "Checking and savings  account")
-new_customer.customer_info()
-new_account = Bank(200000)
-print('Accounts with initials amouns\n')
-print('Checking: ', new_account.check_balance('checking'))
-print('savings: ', new_account.check_balance('savings'))
-print('\n----------------------------')
-print('Make deposites:')
-print('To savingss')
-new_account.make_deposite(309, 'savings')
-print('New balance ', new_account.check_balance('savings'))
-print('\nTo checking')
-new_account.make_deposite(20, 'checking')
-print('New balance', new_account.check_balance('checking'))
-print('\n----------------------------')
-print('\nTransfer money from checking to savings')
-new_account.transfer_amount(500, 'checking')
-print('New savingss balance: ', new_account.check_balance('savings'))
-print('New checking balance: ', new_account.check_balance('checking'))
-
-print("\nWithdrawing from Savings account:")
-new_account.withdraw_money(819, 'savings')
-print("\nWithdrawing from Checking account:")
-new_account.withdraw_money(819, 'checking')
